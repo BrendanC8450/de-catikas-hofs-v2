@@ -20,9 +20,13 @@ def reimplementation_of_map(collection, func):
         collection = list(collection)
     
     print("Collection: ", collection)
-    for el in collection:
-        func(el)
-        print(el)
+    new_list = []
+    for idx, el in enumerate(collection):
+        
+        el = func(collection[idx])
+        # print(el)
+        new_list.append(el)
+
 
     print("Collection after loop:", collection)    
-    return collection
+    return 
