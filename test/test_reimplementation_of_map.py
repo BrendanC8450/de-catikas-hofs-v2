@@ -75,8 +75,7 @@ def test_function_behaviour_maps_to_each_element():
     collection_list = [1, 2, 3, 4, 5]
 
     def test_func(x):
-        print(f"{x * 2}")
-        x * 2
+        return x * 2
 
         
     result = reimplementation_of_map(collection_list, test_func)

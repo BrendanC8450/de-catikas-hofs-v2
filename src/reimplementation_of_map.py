@@ -19,14 +19,8 @@ def reimplementation_of_map(collection, func):
     if type(collection) is not list:
         collection = list(collection)
     
-    print("Collection: ", collection)
-    new_list = []
     for idx, el in enumerate(collection):
         
-        el = func(collection[idx])
-        # print(el)
-        new_list.append(el)
+        collection[idx] = func(el)
 
-
-    print("Collection after loop:", collection)    
-    return 
+    return collection
