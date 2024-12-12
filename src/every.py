@@ -1,11 +1,10 @@
-def every(any_list, predicate):
+def every(any_list, func):
 
     result = True
 
     for el in any_list:
       
-        result = predicate(el)
-
+        result = func(el)
 
         if result == False:
             return result

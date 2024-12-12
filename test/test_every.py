@@ -6,10 +6,10 @@ def test_returns_boolean_true_or_false():
     # ASSIGN
     any_list = []
     
-    def predicate(arg):
+    def test_func(arg):
         pass
     # ACT
-    result = every(any_list, predicate)
+    result = every(any_list, test_func)
 
     # ASSERT
     assert isinstance(result, bool)
@@ -20,13 +20,13 @@ def test_invokes_the_function():
     any_list = [1]
     invoke_count = 0
     
-    def predicate(arg):
+    def test_func(arg):
         nonlocal invoke_count 
         invoke_count += 1
         return invoke_count
 
     # ACT
-    result = every(any_list, predicate)
+    result = every(any_list, test_func)
 
     # ASSERT
     assert result == 1
@@ -37,12 +37,12 @@ def test_invokes_func_for_every_list_element():
     any_list = [1, 2, 3, 4]
     invoke_count = 0
 
-    def predicate(arg):
+    def test_func(arg):
         nonlocal invoke_count
         invoke_count += 1
     
     # ACT
-    result = every(any_list, predicate)
+    result = every(any_list, test_func)
 
     # ASSERT
     assert invoke_count == len(any_list)
